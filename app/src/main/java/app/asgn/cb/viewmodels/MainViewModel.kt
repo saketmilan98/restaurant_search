@@ -15,13 +15,13 @@ class MainViewModel : ViewModel() {
 
     private val restaurantRepository = RestaurantRepository()
 
-    private val _restaurantInfo: MutableLiveData<Resource<RestaurantListDataClass>> = MutableLiveData()
-    val restaurantInfo: LiveData<Resource<RestaurantListDataClass>> = _restaurantInfo
-    var restaurantListMain = ArrayList<RestaurantListDataClass.Restaurants>()
+    private val _restaurantMenuCombinedInfo: MutableLiveData<Resource<ArrayList<RestaurantListDataClass.Restaurants>>> = MutableLiveData()
+    val restaurantMenuCombinedInfo: LiveData<Resource<ArrayList<RestaurantListDataClass.Restaurants>>> = _restaurantMenuCombinedInfo
+    var restaurantMenuCombinedListMain = ArrayList<RestaurantListDataClass.Restaurants>()
 
-    private val _menuInfo: MutableLiveData<Resource<MenuListDataClass>> = MutableLiveData()
-    val menuInfo: LiveData<Resource<MenuListDataClass>> = _menuInfo
-    var menuListMain = ArrayList<MenuListDataClass.Menus>()
+    private val _searchResultRestMenuInfo: MutableLiveData<Resource<ArrayList<RestaurantListDataClass.Restaurants>>> = MutableLiveData()
+    val searchResultRestMenuInfo: LiveData<Resource<ArrayList<RestaurantListDataClass.Restaurants>>> = _searchResultRestMenuInfo
+
 
     init {
         fetchRestaurantAndMenus()
@@ -29,36 +29,66 @@ class MainViewModel : ViewModel() {
 
     private fun fetchRestaurantAndMenus(){
         viewModelScope.launch(Dispatchers.IO){
-            _restaurantInfo.postValue(Resource.loading(null))
+            var restaurantListTemp = ArrayList<RestaurantListDataClass.Restaurants>()
+            _restaurantMenuCombinedInfo.postValue(Resource.loading(null))
             restaurantRepository.fetchRestaurants()
             if(!restaurantRepository.restaurantList?.restaurants.isNullOrEmpty()){
-                _restaurantInfo.postValue(Resource.success(restaurantRepository.restaurantList))
-                restaurantListMain = restaurantRepository.restaurantList?.restaurants!!
+                restaurantListTemp = restaurantRepository.restaurantList?.restaurants!!
             }
-            else {
-                _restaurantInfo.postValue(Resource.error("No data found",null))
-            }
-            Log.d("logflags1",restaurantRepository.restaurantList.toString())
             viewModelScope.launch(Dispatchers.IO){
+                var menuListTemp = ArrayList<MenuListDataClass.Menus>()
                 restaurantRepository.fetchMenus()
                 if(!restaurantRepository.menuList?.menus.isNullOrEmpty()){
-                    _menuInfo.postValue(Resource.success(restaurantRepository.menuList))
-                    menuListMain = restaurantRepository.menuList?.menus!!
+                    menuListTemp = restaurantRepository.menuList?.menus!!
+                }
+                val tempRestaurants = ArrayList<RestaurantListDataClass.Restaurants>()
+                restaurantListTemp.forEach { it1->
+                    val tempMenu = menuListTemp.find { it2-> it2.restaurantId ==  it1.id}
+                    if(tempMenu != null){
+                        tempRestaurants.add(it1.copy(menus = tempMenu))
+                    }
+                }
+                if(tempRestaurants.isNotEmpty()){
+                    _restaurantMenuCombinedInfo.postValue(Resource.success(tempRestaurants))
+                    restaurantMenuCombinedListMain = tempRestaurants
                 }
                 else {
-                    _menuInfo.postValue(Resource.error("No data found",null))
+                    _restaurantMenuCombinedInfo.postValue(Resource.error("No data found",null))
                 }
-                Log.d("logflags2",restaurantRepository.menuList.toString())
             }
         }
     }
 
-    fun getRestaurantList() : ArrayList<RestaurantListDataClass.Restaurants> {
-        return restaurantListMain
-    }
+    fun getSearchResultRestList(query : String){
+        viewModelScope.launch{
+            val filteredRestaurantList = restaurantMenuCombinedListMain.filterIndexed { position, restItem->
+                val filteredMenu = ArrayList<MenuListDataClass.MenuItems>()
+                restItem.menus?.categories?.forEach { categoryItem ->
+                    val filteredMenuList = categoryItem.menuItems.filter { menuItems ->
+                        menuItems.categoryName = categoryItem.name
+                        (menuItems.name?:"").contains(query, ignoreCase = true)
+                    }
+                    filteredMenu.addAll(filteredMenuList)
+                }
+                restItem.searchedMenus = filteredMenu
 
-    fun getMenuList() : ArrayList<MenuListDataClass.Menus> {
-        return menuListMain
-    }
+                if(query.isEmpty()){
+                    restItem.searchedMenus = ArrayList<MenuListDataClass.MenuItems>()
+                }
+                (restItem.cuisineType?:"").contains(query, ignoreCase = true) ||
+                    (restItem.neighborhood?:"").contains(query, ignoreCase = true) ||
+                    (restItem.address?:"").contains(query, ignoreCase = true) ||
+                    (restItem.name?:"").contains(query, ignoreCase = true) ||
+                    !(restItem.menus?.categories?.filter { categoryItem-> (categoryItem.name?:"").contains(query, ignoreCase = true) }.isNullOrEmpty()) ||
+                        (filteredMenu.isNotEmpty())
+            } as ArrayList<RestaurantListDataClass.Restaurants>
 
+            if(filteredRestaurantList.isNotEmpty()){
+                _searchResultRestMenuInfo.postValue(Resource.success(filteredRestaurantList))
+            }
+            else {
+                _searchResultRestMenuInfo.postValue(Resource.error("no result found", null))
+            }
+        }
+    }
 }

@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">RestaurantSearch</string>
+    <string name="notfound_text">No result found</string>
+    <string name="query_hint">Search for restaurant or cuisine</string>
+    <string name="matching_dishes">Matching dishes</string>
 </resources>

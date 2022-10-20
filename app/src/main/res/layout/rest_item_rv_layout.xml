@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="restItem"
+            type="app.asgn.cb.models.RestaurantListDataClass.Restaurants"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/background_cl"
+        android:layout_margin="4dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="10dp"
+            android:id="@+id/cv1_iril">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cl2_iril"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/iv1_iril"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/placeholder1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv2_iril"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/iv1_iril"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@{restItem.name}"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv4_iril"
+                    android:layout_marginEnd="20dp"
+                    tools:text="Restaurant name"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv3_iril"
+                    app:layout_constraintTop_toBottomOf="@+id/tv2_iril"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv5_iril"
+                    app:layout_constraintBottom_toTopOf="@+id/tv7_iril"
+                    android:text="@{restItem.cuisineType}"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="5dp"
+                    tools:text="Cuisine type"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv7_iril"
+                    app:layout_constraintTop_toBottomOf="@+id/tv3_iril"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv5_iril"
+                    app:layout_constraintBottom_toTopOf="@+id/search_menu_cl"
+                    android:text="@{restItem.neighborhood}"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="5dp"
+                    tools:text="Cuisine type"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv4_iril"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/iv1_iril"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text=""
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="10dp"
+                    android:textAlignment="center"
+                    android:drawablePadding="2dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv5_iril"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv4_iril"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text=""
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="10dp"
+
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/search_menu_cl"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/tv7_iril"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv6_iril"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/search_menu_rv"
+                        android:text="@string/matching_dishes"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="10dp"
+                        tools:text="@string/matching_dishes"
+                        />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/search_menu_rv"
+                        app:layout_constraintTop_toBottomOf="@+id/tv6_iril"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

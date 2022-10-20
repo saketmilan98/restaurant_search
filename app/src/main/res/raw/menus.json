@@ -51,14 +51,14 @@
 					"name": "Appeteasers",
 					"menu-items": [{
 							"id": "94298",
-							"name": "3 Chicken Wings",
+							"name": "3 Chicken Wingsabcd",
 							"description": "Tender, Spicy and Juicy. Original or Peri - Crusted ",
 							"price": "250.00",
 							"images": []
 						},
 						{
 							"id": "94301",
-							"name": "Chicken Livers and Portuguese Roll",
+							"name": "Chicken Livers and Portuguese Rollabcd",
 							"description": "Chicken Livers Topped with PERi-PERi Sauce, Served with A Roll To Soak Up The Sauce ",
 							"price": "250.00",
 							"images": []
@@ -71,14 +71,14 @@
 					"name": "Peri-peri chicken",
 					"menu-items": [{
 							"id": "94349",
-							"name": "1/4 Chicken",
+							"name": "1/4 Chickenabcde",
 							"description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled ",
 							"price": "385.00",
 							"images": []
 						},
 						{
 							"id": "94352",
-							"name": "1/2 Chicken",
+							"name": "1/2 Chickenabcdef",
 							"description": "Half Chicken Marinated with PERi-PERi Sauce and Grilled ",
 							"price": "685.00",
 							"images": []

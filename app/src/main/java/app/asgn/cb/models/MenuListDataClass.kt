@@ -1,5 +1,6 @@
 package app.asgn.cb.models
 
+import app.asgn.cb.util.toDecimalFormat
 import com.google.gson.annotations.SerializedName
 
 class MenuListDataClass(
@@ -19,6 +20,10 @@ class MenuListDataClass(
         @SerializedName("name"        ) var name        : String?           = null,
         @SerializedName("description" ) var description : String?           = null,
         @SerializedName("price"       ) var price       : String?           = null,
-        @SerializedName("images"      ) var images      : ArrayList<String> = arrayListOf()
-    )
+        @SerializedName("images"      ) var images      : ArrayList<String> = arrayListOf(),
+        @SerializedName("category_name")var categoryName: String?           = null
+    ) {
+        val formattedPrice: String
+            get() = "₹${price?.toDecimalFormat()}"
+    }
 }
