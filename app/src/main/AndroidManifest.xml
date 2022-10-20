@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="app.asgn.cb">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".app.MyApp"
         android:allowBackup="true"

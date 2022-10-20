@@ -1,87 +1,226 @@
 {
 	"menus": [{
-			"restaurantId": 1,
-			"categories": [{
-					"id": "26576",
-					"name": "Appeteasers",
-					"menu-items": [{
-							"id": "94298",
-							"name": "3 Chicken Wings",
-							"description": "Tender, Spicy and Juicy. Original or Peri - Crusted ",
-							"price": "250.00",
-							"images": []
-						},
-						{
-							"id": "94301",
-							"name": "Chicken Livers and Portuguese Roll",
-							"description": "Chicken Livers Topped with PERi-PERi Sauce, Served with A Roll To Soak Up The Sauce ",
-							"price": "250.00",
-							"images": []
-						}
-
-					]
-				},
+		"restaurantId": 1,
+		"categories": [{
+			"id": "26576",
+			"name": "Appeteasers",
+			"menu-items": [{
+				"id": "94298",
+				"name": "3 Chicken Wings",
+				"description": "Tender, Spicy and Juicy. Original or Peri - Crusted ",
+				"price": "250.00",
+				"images": "https://b.zmtcdn.com/data/dish_photos/2a5/a8f597988f3750533cfdbbf4e80ab2a5.jpg?fit=around|130:130&crop=130:130;*,*"
+			},
 				{
-					"id": "26588",
-					"name": "Peri-peri chicken",
-					"menu-items": [{
-							"id": "94349",
-							"name": "1/4 Chicken",
-							"description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled ",
-							"price": "385.00",
-							"images": []
-						},
-						{
-							"id": "94352",
-							"name": "1/2 Chicken",
-							"description": "Half Chicken Marinated with PERi-PERi Sauce and Grilled ",
-							"price": "685.00",
-							"images": []
-						}
-
-					]
+					"id": "94301",
+					"name": "Chicken Livers and Portuguese Roll",
+					"description": "Chicken Livers Topped with PERi-PERi Sauce, Served with A Roll To Soak Up The Sauce ",
+					"price": "250.00",
+					"images": "https://b.zmtcdn.com/data/dish_photos/b97/e63811708b5c4de8e50d91a4bb3d3b97.jpg?fit=around|130:130&crop=130:130;*,*"
 				}
 
 			]
 		},
+			{
+				"id": "26588",
+				"name": "Peri-peri chicken",
+				"menu-items": [{
+					"id": "94349",
+					"name": "1/4 Chicken",
+					"description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled ",
+					"price": "385.00",
+					"images": "https://b.zmtcdn.com/data/pictures/chains/9/20021959/6be27d1e5907cbaa31c4b2e13f070da7.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*"
+				},
+					{
+						"id": "94352",
+						"name": "1/2 Chicken",
+						"description": "Half Chicken Marinated with PERi-PERi Sauce and Grilled ",
+						"price": "685.00",
+						"images": "https://b.zmtcdn.com/data/pictures/chains/7/97307/320694c31b042bc43ea7dc07ae03f9ed.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A"
+					}
+
+				]
+			}
+
+		]
+	},
 		{
 			"restaurantId": 2,
 			"categories": [{
-					"id": "265762",
-					"name": "Appeteasers",
+				"id": "265762",
+				"name": "Pizza",
+				"menu-items": [{
+					"id": "94298",
+					"name": "Cheese Pizza",
+					"description": "Tender, Spicy and Juicy. Original or Peri - Crusted ",
+					"price": "260.00",
+					"images": "https://slice-menu-assets-prod.imgix.net/51327/1665102117_a653b83d2e?fit=crop&w=160&h=160"
+				},
+					{
+						"id": "94301",
+						"name": "Grilled Chicken Pizza",
+						"description": "Chicken Livers Topped with PERi-PERi Sauce, Served with A Roll To Soak Up The Sauce ",
+						"price": "300.00",
+						"images": "https://slice-menu-assets-prod.imgix.net/51327/1618907159_66f434f28a?fit=crop&w=1500&h=937"
+					}
+
+				]
+			},
+				{
+					"id": "265882",
+					"name": "Pasta",
 					"menu-items": [{
-							"id": "94298",
-							"name": "3 Chicken Wingsabcd",
-							"description": "Tender, Spicy and Juicy. Original or Peri - Crusted ",
-							"price": "250.00",
-							"images": []
-						},
+						"id": "94349",
+						"name": "Spaghetti with Tomato Sauce",
+						"description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled ",
+						"price": "375.00",
+						"images": "https://slice-menu-assets-prod.imgix.net/51327/1661975535_c415d3c996?fit=crop&w=160&h=160"
+					},
 						{
-							"id": "94301",
-							"name": "Chicken Livers and Portuguese Rollabcd",
-							"description": "Chicken Livers Topped with PERi-PERi Sauce, Served with A Roll To Soak Up The Sauce ",
-							"price": "250.00",
-							"images": []
+							"id": "94352",
+							"name": "Cheese Ravioli",
+							"description": "Half Chicken Marinated with PERi-PERi Sauce and Grilled ",
+							"price": "625.00",
+							"images": "https://slice-menu-assets-prod.imgix.net/51327/1661975496_051426fd6e?fit=crop&w=160&h=160"
 						}
 
 					]
+				}
+			]
+		},
+		{
+			"restaurantId": 3,
+			"categories": [{
+				"id": "265762",
+				"name": "Main Course",
+				"menu-items": [{
+					"id": "94298",
+					"name": "Chilli Butter Chicken",
+					"description": "Tender, Spicy and Juicy. Original or Peri - Crusted ",
+					"price": "210.00",
+					"images": "https://b.zmtcdn.com/data/dish_photos/fa6/dd226534aca044c94bef49a926297fa6.jpg?fit=around|130:130&crop=130:130;*,*"
 				},
+					{
+						"id": "94301",
+						"name": "Tandoori Chicken Masala",
+						"description": "Chicken Livers Topped with PERi-PERi Sauce, Served with A Roll To Soak Up The Sauce ",
+						"price": "330.00",
+						"images": "https://b.zmtcdn.com/data/dish_photos/780/194ffa06c4ef2ad9f11c7f7d511b6780.jpg?fit=around|130:130&crop=130:130;*,*"
+					},
+					{
+						"id": "94301",
+						"name": "Kadhai Paneer",
+						"description": "Chicken Livers Topped with PERi-PERi Sauce, Served with A Roll To Soak Up The Sauce ",
+						"price": "330.00",
+						"images": "https://b.zmtcdn.com/data/dish_photos/c34/20e47159205fb635ed63478525c0cc34.jpg?fit=around|130:130&crop=130:130;*,*"
+					}
+
+				]
+			},
 				{
 					"id": "265882",
-					"name": "Peri-peri chicken",
+					"name": "Desserts",
 					"menu-items": [{
-							"id": "94349",
-							"name": "1/4 Chickenabcde",
-							"description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled ",
-							"price": "385.00",
-							"images": []
-						},
+						"id": "94349",
+						"name": "Double Ka Meetha",
+						"description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled ",
+						"price": "375.00",
+						"images": "https://b.zmtcdn.com/data/dish_photos/a4e/e497ec89f3ae74591232b0d1ab301a4e.jpg?fit=around|130:130&crop=130:130;*,*"
+					},
 						{
 							"id": "94352",
-							"name": "1/2 Chickenabcdef",
+							"name": "Kaddu Ka Kheer",
 							"description": "Half Chicken Marinated with PERi-PERi Sauce and Grilled ",
-							"price": "685.00",
-							"images": []
+							"price": "125.00",
+							"images": "https://b.zmtcdn.com/data/dish_photos/b5f/58cb17125075f174a0ff987c983d5b5f.jpg?fit=around|130:130&crop=130:130;*,*"
+						}
+
+					]
+				}
+			]
+		},
+		{
+			"restaurantId": 4,
+			"categories": [{
+				"id": "265762",
+				"name": "Biryani Buckets",
+				"menu-items": [{
+					"id": "94298",
+					"name": "Popcorn Chicken Biryani Bucket",
+					"description": "Tender, Spicy and Juicy. Original or Peri - Crusted ",
+					"price": "210.00",
+					"images": "https://b.zmtcdn.com/data/dish_photos/bdd/725162deeb004cc683f1af5dd3a72bdd.jpg?fit=around|130:130&crop=130:130;*,*"
+				},
+					{
+						"id": "94301",
+						"name": "Veg Biryani Bucket",
+						"description": "Chicken Livers Topped with PERi-PERi Sauce, Served with A Roll To Soak Up The Sauce ",
+						"price": "330.00",
+						"images": "https://b.zmtcdn.com/data/dish_photos/651/b4ed59ec4791ecd6e9aab782944e5651.jpg?fit=around|130:130&crop=130:130;*,*"
+					}
+
+				]
+			},
+				{
+					"id": "265882",
+					"name": "Burgers",
+					"menu-items": [{
+						"id": "94349",
+						"name": "Chicken Zinger Burger - Classic",
+						"description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled ",
+						"price": "375.00",
+						"images": "https://b.zmtcdn.com/data/dish_photos/2cd/554a151953be2415e44e3d561e8742cd.jpg?fit=around|130:130&crop=130:130;*,*"
+					},
+						{
+							"id": "94352",
+							"name": "Veg Zinger Burger",
+							"description": "Half Chicken Marinated with PERi-PERi Sauce and Grilled ",
+							"price": "125.00",
+							"images": "https://b.zmtcdn.com/data/dish_photos/c6e/5d6088b3526e94e3cc6cf749d3a8bc6e.jpg?fit=around|130:130&crop=130:130;*,*"
+						}
+
+					]
+				}
+			]
+		},
+		{
+			"restaurantId": 5,
+			"categories": [{
+				"id": "265762",
+				"name": "Creamy Tubs 140 Ml",
+				"menu-items": [{
+					"id": "94298",
+					"name": "Dates & Almond Tub",
+					"description": "Tender, Spicy and Juicy. Original or Peri - Crusted ",
+					"price": "210.00",
+					"images": "https://b.zmtcdn.com/data/dish_photos/ef8/8d270315983f230411a5345c59b3fef8.jpg?fit=around|130:130&crop=130:130;*,*"
+				},
+					{
+						"id": "94301",
+						"name": "Black Currant Tub",
+						"description": "Chicken Livers Topped with PERi-PERi Sauce, Served with A Roll To Soak Up The Sauce ",
+						"price": "330.00",
+						"images": "https://b.zmtcdn.com/data/dish_photos/e95/6a8757fbcbca12cee3d0d14ea83cee95.jpg?fit=around|130:130&crop=130:130;*,*"
+					}
+
+				]
+			},
+				{
+					"id": "265882",
+					"name": "Hot Sundaes",
+					"menu-items": [{
+						"id": "94349",
+						"name": "Chocolava",
+						"description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled ",
+						"price": "375.00",
+						"images": "https://b.zmtcdn.com/data/dish_photos/5df/a86f2a38c2e2cc73da0b3a6e463555df.jpg?fit=around|130:130&crop=130:130;*,*"
+					},
+						{
+							"id": "94352",
+							"name": "Hot Choco Fudge",
+							"description": "Half Chicken Marinated with PERi-PERi Sauce and Grilled ",
+							"price": "125.00",
+							"images": "https://b.zmtcdn.com/data/dish_photos/3ae/8e339429197a075a9705f955dc2793ae.jpg?fit=around|130:130&crop=130:130;*,*"
 						}
 
 					]

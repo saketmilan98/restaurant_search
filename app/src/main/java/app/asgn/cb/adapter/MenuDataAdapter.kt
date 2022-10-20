@@ -9,6 +9,7 @@ import app.asgn.cb.models.RestaurantListDataClass
 import app.asgn.cb.R
 import app.asgn.cb.databinding.MenuItemRvLayoutBinding
 import app.asgn.cb.models.MenuListDataClass
+import app.asgn.cb.util.loadImage
 import java.util.*
 
 class MenuDataAdapter(val context : Context, val onItemClicked: (MenuListDataClass.MenuItems, Int) -> Unit) : RecyclerView.Adapter<MenuDataAdapter.MenuViewHolder>() {
@@ -25,6 +26,7 @@ class MenuDataAdapter(val context : Context, val onItemClicked: (MenuListDataCla
     override fun onBindViewHolder(menuViewHolder: MenuViewHolder, i: Int) {
         val currentItem: MenuListDataClass.MenuItems = menuDataa!![i]
         menuViewHolder.menuListItemBinding.menuItem = currentItem
+        menuViewHolder.menuListItemBinding.iv1Mirl.loadImage(currentItem.images)
         menuViewHolder.itemView.setOnClickListener {
             onItemClicked(currentItem, i)
         }

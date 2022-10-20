@@ -27,6 +27,7 @@ class RestDataAdapter(val context : Context, val onItemClicked: (RestaurantListD
     override fun onBindViewHolder(restViewHolder: RestViewHolder, i: Int) {
         val currentItem: RestaurantListDataClass.Restaurants = restDataa!![i]
         restViewHolder.restListItemBinding.restItem = currentItem
+        restViewHolder.restListItemBinding.iv1Rirl.loadImage(currentItem.photograph)
         restViewHolder.restListItemBinding.searchMenuCl.isVisible = !currentItem.searchedMenus.isNullOrEmpty()
         restViewHolder.restListItemBinding.iv1Rirl.isVisible = currentItem.searchedMenus.isNullOrEmpty()
         val menuDataAdapter = MenuDataAdapter(context,
