@@ -45,6 +45,11 @@ class MainViewModel : ViewModel() {
                 restaurantListTemp.forEach { it1->
                     val tempMenu = menuListTemp.find { it2-> it2.restaurantId ==  it1.id}
                     if(tempMenu != null){
+                        tempMenu.categories.forEach { categoryItem ->
+                            categoryItem.menuItems.forEach { menuItemss ->
+                                menuItemss.categoryName = categoryItem.name
+                            }
+                        }
                         tempRestaurants.add(it1.copy(menus = tempMenu))
                     }
                 }

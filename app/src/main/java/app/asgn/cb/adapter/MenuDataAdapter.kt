@@ -25,7 +25,6 @@ class MenuDataAdapter(val context : Context, val onItemClicked: (MenuListDataCla
     override fun onBindViewHolder(menuViewHolder: MenuViewHolder, i: Int) {
         val currentItem: MenuListDataClass.MenuItems = menuDataa!![i]
         menuViewHolder.menuListItemBinding.menuItem = currentItem
-
         menuViewHolder.itemView.setOnClickListener {
             onItemClicked(currentItem, i)
         }
